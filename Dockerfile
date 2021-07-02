@@ -8,4 +8,6 @@ WORKDIR /app
 COPY . .
 
 EXPOSE 8051
-CMD ["opyrator", "launch-ui", "server:generate_korean_contents"]
+EXPOSE 8080
+
+CMD ( opyrator launch-ui server:generate_korean_contents & ) && opyrator launch-api server:generate_korean_contents
